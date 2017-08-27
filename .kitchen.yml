@@ -1,0 +1,32 @@
+---
+driver:
+  name: dokken
+  chef_version: latest
+  privileged: true #because docker and systemd/upstart
+provisioner:
+  name: dokken
+
+transport:
+  name: dokken
+
+platforms:
+  - name: centos73
+    driver:
+      image: centos:7.3.1611
+      pid_one_command: /usr/lib/systemd/systemd #it is the base daemon when the system is initialized
+      intermediate_instructions:
+        - RUN yum -y install lsof which systemd-sysv initscripts net-tools
+#intermediate_instructions are those which are executed as soon as the container is initialized.
+
+verifier:
+   name: inspec
+
+suites:
+  - name: default
+    run_list:
+      - recipe[nginx::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
+
