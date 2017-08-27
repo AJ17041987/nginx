@@ -16,3 +16,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+package 'epel-release'
+
+package 'nginx'
+
+service 'nginx' do
+  action [:start, :enable]
+end
+
+template '/usr/share/nginx/html/index.html' do
+  source 'index.html.erb'
+  owner 'root'
+  group 'root'
+  mode '0755'
+end

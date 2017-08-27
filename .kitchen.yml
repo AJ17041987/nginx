@@ -17,6 +17,8 @@ platforms:
       intermediate_instructions:
         - RUN yum -y install lsof which systemd-sysv initscripts net-tools
 #intermediate_instructions are those which are executed as soon as the container is initialized.
+      forward:
+        - 9080:80
 
 verifier:
    name: inspec
