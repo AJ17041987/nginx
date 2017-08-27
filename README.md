@@ -1,4 +1,6 @@
 # nginx
+[![Build Status](https://travis-ci.org/AJ17041987/nginx.svg?branch=master)](https://travis-ci.org/AJ17041987/nginx)
+
 This cookbook installs and configures a simple website using the Nginx web server.
 
 Usage
