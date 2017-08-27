@@ -14,7 +14,7 @@ before_script:
   - eval "$(/opt/chefdk/bin/chef shell-init bash)"
   - /opt/chefdk/embedded/bin/chef --version
 
-script: /opt/chefdk/embedded/bin verify
+script: /opt/chefdk/embedded/bin/kitchen verify
 
 matrix:
   include:
