@@ -4,7 +4,7 @@ maintainer_email 'you@example.com'
 license 'apachev2'
 description 'Installs/Configures a simple website using the Nginx webserver'
 long_description IO.read("#{File.dirname(__FILE__)}/README.md")
-version '1.0.0'
+version '1.1.0'
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
